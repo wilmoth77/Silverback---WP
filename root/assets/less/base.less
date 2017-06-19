@@ -1,0 +1,29 @@
+/* 
+    Base.less - Is compiled and minified for production to /public/css/base.min.css
+*/
+
+//Underscores
+@import "underscores";              // Base styling from the Underscores theme
+
+// Bootstrap
+@import "bootstrap";
+
+// FontAwesome
+@import "fontawesome";
+@fa-font-path: "//netdna.bootstrapcdn.com/font-awesome/4.3.0/fonts"; // for referencing Bootstrap CDN font files directly
+
+// moscow
+@import "global";                   // Base styling & custom mixins
+@import "components/fonts";         // Font imports
+@import "components/buttons";       // Button tweaks
+@import "components/forms";         // Form tweaks
+@import "components/media";         // WordPress media
+@import "components/wp-classes";    // WordPress generated classes
+@import "layouts/general";          // General styling
+@import "layouts/header";           // Header styling
+@import "layouts/sidebar";          // Sidebar styling
+@import "layouts/footer";           // Footer styling
+@import "layouts/pages";            // Page styling
+@import "layouts/posts";            // Post styling
+@import "layouts/pages/home";       // Home page styling
+@import "layouts/pages/landing";    // Landing page styling
