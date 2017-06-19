@@ -32,6 +32,18 @@ cd /var/www/YourWordPressInstallation/wp-content/themes/NewThemeName
 
 
 
+## Installation
+
+Install a copy of WordPress on your localhost. Cd into your themes folder with and create a new, empty theme folder.
+```
+cd /var/www/YourWordPressInstallation/wp-content/themes
+```
+and create a new, empty theme folder.
+```
+mkdir NewThemeName
+```
+
+
 ### 1. Generate the template files in your empty theme folder
 
 ```
