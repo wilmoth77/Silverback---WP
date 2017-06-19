@@ -18,23 +18,27 @@ git clone github:wilmoth77/Silverback---WP ~/.grunt-init/silverback
 
 ## Installation
 
-Install WordPress. CD into your themes folder create a new, empty theme folder.
+CD into your themes directory
 ```
-cd /var/www/YourWordPressInstallation/wp-content/themes
+cd /var/www/YourSite/wp-content/themes
 ```
-and create a new, empty theme folder.
+Create a new, empty theme folder.
 ```
 mkdir NewThemeName
 ```
+CD to the new theme folder.
+```
+cd /var/www/YourSite/wp-content/themes/NewThemeName
+```
 
 
 
-### 1. Generate the template files in your empty theme folder
+### 1. Generate the template files in your empty theme directory
 
 ```
-grunt-init moscow
+grunt-init silverback
 ```
-You should give your theme a title and function-prefix (e.g. MyTheme / mytheme).
+You should give your theme a title and function-prefix (e.g. MyTheme / myt).
 
 ### 2. Install all required NPM modules
 
@@ -43,16 +47,7 @@ npm install
 ```
 
 
-### 3. Install Bootstrap and other frontend dependencies with Bower
-
-To add your packages of choice, modify ```bower.json``` and run
-
-```
-bower install
-```
-
-
-### 4. Compile folder structure with Grunt
+### 3. Compile folder structure with Grunt
 
 ```
 grunt compile
@@ -63,5 +58,12 @@ grunt compile
 ```
 grunt
 ```
+
+### 5. Build
+
+```
+grunt build
+```
+Same grunt tasks as "grunt compile" except Less is compiled without source maps.
 
 ###
