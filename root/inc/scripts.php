@@ -12,9 +12,9 @@ function {%= title %}_scripts() {
       'css'       => '/public/css/main.min.css',
       'font-open-sans'  => '//fonts.googleapis.com/css?family=Open+Sans:300,400,600',
       'font-roboto'     => '//fonts.googleapis.com/css?family=Roboto:100,300,400,500,700,900',
-      'icons-mdi'     => '//cdn.materialdesignicons.com/1.9.32/css/materialdesignicons.min.css'
+      'icons-mdi'     => '//cdn.materialdesignicons.com/1.9.32/css/materialdesignicons.min.css',
       'script'    => '/public/js/script.min.js',
-      'jquery'    => '//ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.js',
+      'jquery'    => '//ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.js'
     );
 
     wp_enqueue_style('font-open-sans');
