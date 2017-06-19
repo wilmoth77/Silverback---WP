@@ -12,24 +12,8 @@ npm install -g grunt-init
 
 To clone the repository and add the template to grunt-init for automated project scaffolding run
 ```
-git clone github:wilmoth77/Silverback---WP.git ~/.grunt-init/silverback
+git clone github:wilmoth77/moscow.git ~/.grunt-init/moscow
 ```
-
-
-## Installation
-
-Install a copy of WordPress on your localhost.
-```
-cd /var/www/YourWordPressInstallation/wp-content/themes
-```
-and create a new, empty theme folder.
-```
-mkdir NewThemeName
-```
-cd /var/www/YourWordPressInstallation/wp-content/themes/NewThemeName
-```
-
-
 
 
 ## Installation
@@ -44,10 +28,11 @@ mkdir NewThemeName
 ```
 
 
+
 ### 1. Generate the template files in your empty theme folder
 
 ```
-grunt-init silverback
+grunt-init moscow
 ```
 You should give your theme a title and function-prefix (e.g. MyTheme / mytheme).
 
@@ -57,22 +42,26 @@ You should give your theme a title and function-prefix (e.g. MyTheme / mytheme).
 npm install
 ```
 
-### 3. Compile folder structure with Grunt
+
+### 3. Install Bootstrap and other frontend dependencies with Bower
+
+To add your packages of choice, modify ```bower.json``` and run
+
+```
+bower install
+```
+
+
+### 4. Compile folder structure with Grunt
 
 ```
 grunt compile
 ```
 
-### 4. Monitor your filesystem for changes
+### 5. Monitor your filesystem for changes
 
 ```
 grunt
-```
-
-### 5. Build
-```
-Currently same Grunt tasks as "grunt compile", except less is ran without source mapping
-grunt build
 ```
 
 ###
