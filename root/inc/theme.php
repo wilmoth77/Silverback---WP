@@ -3,9 +3,9 @@
  * {%= title %} functions and definitions
  *
  * @package {%= title %}
- * 
+ *
  * Was originally the functions.php stuff. I'm seperating it out.
- * 
+ *
  */
 
 /**
@@ -43,11 +43,12 @@ function {%= prefix %}_setup() {
 	 */
 	add_theme_support( 'post-thumbnails' );
 
-	// This theme uses wp_nav_menu() in one location.
+	// This theme uses wp_nav_menu() in several locations.
 	register_nav_menus( array(
 		'primary' => __( 'Primary Menu', '{%= prefix %}' ),
+		'secondary' => __( 'Secondary Menu', '{%= prefix %}' ),
 	) );
-	
+
 	/*
 	 * Switch default core markup for search form, comment form, and comments
 	 * to output valid HTML5.

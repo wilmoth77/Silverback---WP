@@ -4,19 +4,24 @@
  * {%= title %} Enqueue scripts and styles. Includes custom WP-Admin styles.
  *
  * @package {%= title %}
- * 
+ *
  */
 
 function {%= title %}_scripts() {
     $assets = array(
-      'css'       => '/public/css/base.min.css',
+      'css'       => '/public/css/main.min.css',
+      'font-open-sans'  => '//fonts.googleapis.com/css?family=Open+Sans:300,400,600',
+      'font-roboto'     => '//fonts.googleapis.com/css?family=Roboto:100,300,400,500,700,900',
+      'icons-mdi'     => '//cdn.materialdesignicons.com/1.9.32/css/materialdesignicons.min.css'
       'script'    => '/public/js/script.min.js',
-      'modernizr' => '/public/js/modernizr.min.js',
-      'jquery'    => '//ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.js'
+      'jquery'    => '//ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.js',
     );
-    
-    wp_enqueue_style('base-style', get_stylesheet_directory_uri() . $assets['css'], false, filemtime( get_stylesheet_directory() . '/public/css/base.min.css' ), 'all');
-     
+
+    wp_enqueue_style('font-open-sans');
+    wp_enqueue_style('font-roboto');
+    wp_enqueue_style('icons-mdi');
+    wp_enqueue_style('main-style', get_stylesheet_directory_uri() . $assets['css'], false, filemtime( get_stylesheet_directory() . '/public/css/main.min.css' ), 'all');
+
    /**
    * jQuery is loaded using the same method from HTML5 Boilerplate:
    * Grab Google CDN's latest jQuery with a protocol relative URL; fallback to local if offline
@@ -27,12 +32,11 @@ function {%= title %}_scripts() {
     wp_register_script('jquery', $assets['jquery'], array(), null, false);
     add_filter('script_loader_src', '{%= title %}_jquery_local_fallback', 10, 2);
   }
-  
+
   if ( is_singular() && comments_open() && get_option( 'thread_comments' ) ) {
 		wp_enqueue_script( 'comment-reply' );
 	}
-        
-  wp_enqueue_script('modernizr', get_template_directory_uri() . $assets['modernizr'], array(), null, false);
+
   wp_enqueue_script('jquery');
   wp_enqueue_script('script', get_template_directory_uri() . $assets['script'], array(), filemtime( get_template_directory() . $assets['script'] ), true);
 }
