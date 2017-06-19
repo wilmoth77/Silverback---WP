@@ -10,16 +10,10 @@
 function {%= title %}_scripts() {
     $assets = array(
       'css'       => '/public/css/main.min.css',
-      'font-open-sans'  => '//fonts.googleapis.com/css?family=Open+Sans:300,400,600',
-      'font-roboto'     => '//fonts.googleapis.com/css?family=Roboto:100,300,400,500,700,900',
-      'icons-mdi'     => '//cdn.materialdesignicons.com/1.9.32/css/materialdesignicons.min.css',
       'script'    => '/public/js/script.min.js',
       'jquery'    => '//ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.js'
     );
 
-    wp_enqueue_style('font-open-sans');
-    wp_enqueue_style('font-roboto');
-    wp_enqueue_style('icons-mdi');
     wp_enqueue_style('main-style', get_stylesheet_directory_uri() . $assets['css'], false, filemtime( get_stylesheet_directory() . '/public/css/main.min.css' ), 'all');
 
    /**

@@ -13,6 +13,9 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="shortcut icon" href="<?php bloginfo('template_directory');?>/public/img/favicon.ico">
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Roboto:100,300,400,500,700,900" rel="stylesheet">
+  <link href="https://cdn.materialdesignicons.com/1.9.32/css/materialdesignicons.min.css" rel="stylesheet">
   <title><?php wp_title( '|', true, 'right' ); ?></title>
   <link rel="profile" href="http://gmpg.org/xfn/11">
 
@@ -35,34 +38,34 @@
         </div>
         <div id="navbar" class="navbar-collapse collapse">
           <?php
-           if (has_nav_menu('primary')) :
-             //wp_nav_menu( array( 'container'=> false, 'menu_class'=> 'nav navbar-nav') );
-             wp_nav_menu( array(
-               'menu'              => 'primary',
-               'theme_location'    => 'primary',
-               'container'         => false,
-               'menu_class'        => 'nav navbar-nav',
-               'fallback_cb'       => 'wp_bootstrap_navwalker::fallback',
-               'walker'            => new wp_bootstrap_navwalker())
-             );
-           endif;
-           ?>
-            <?php
-             if (has_nav_menu('secondary')) :
-               //wp_nav_menu( array( 'container'=> false, 'menu_class'=> 'nav navbar-nav') );
-               wp_nav_menu( array(
-                 'menu'              => 'secondary',
-                 'theme_location'    => 'secondary',
-                 'container'         => false,
-                 'menu_class'        => 'nav navbar-nav navbar-right',
-                 'fallback_cb'       => 'wp_bootstrap_navwalker::fallback',
-                 'walker'            => new wp_bootstrap_navwalker())
-               );
-             endif;
-             ?>
-             <form class="navbar-form navbar-right">
-               <input type="text" class="form-control" placeholder="Search...">
-             </form>
+          if (has_nav_menu('primary')) :
+            //wp_nav_menu( array( 'container'=> false, 'menu_class'=> 'nav navbar-nav') );
+            wp_nav_menu( array(
+              'menu'              => 'primary',
+              'theme_location'    => 'primary',
+              'container'         => false,
+              'menu_class'        => 'nav navbar-nav',
+              'fallback_cb'       => 'wp_bootstrap_navwalker::fallback',
+              'walker'            => new wp_bootstrap_navwalker())
+            );
+          endif;
+          ?>
+          <?php
+          if (has_nav_menu('secondary')) :
+            //wp_nav_menu( array( 'container'=> false, 'menu_class'=> 'nav navbar-nav') );
+            wp_nav_menu( array(
+              'menu'              => 'secondary',
+              'theme_location'    => 'secondary',
+              'container'         => false,
+              'menu_class'        => 'nav navbar-nav navbar-right',
+              'fallback_cb'       => 'wp_bootstrap_navwalker::fallback',
+              'walker'            => new wp_bootstrap_navwalker())
+            );
+          endif;
+          ?>
+          <form class="navbar-form navbar-right">
+            <input type="text" class="form-control" placeholder="Search...">
+          </form>
         </div><!--/.nav-collapse -->
       </div>
     </nav>
