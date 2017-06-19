@@ -1,9 +1,9 @@
 /**
- * moscow
- * https://github.com/wilmoth77/moscow
- *
- * Licensed under the MIT License
- */
+* silverback-wp
+* https://github.com/wilmoth77/Silverback---WP
+*
+* Licensed under the MIT License
+*/
 
 'use strict';
 
@@ -23,31 +23,30 @@ exports.warnOn = '*';
 exports.template = function (grunt, init, done) {
 	init.process({}, [
 		// Prompt for these values.
-		init.prompt('title', 'moscow'),
+		init.prompt('title', 'silverback-wp'),
 		{
 			name   : 'prefix',
 			message: 'PHP function prefix (alpha and underscore characters only)',
-			default: 'moscow'
+			default: 'silverback-wp'
 		},
 	], function( err, props ) {
-		props.keywords = ['Underscores','Sage(Roots)','Bootstrap'];
+		props.keywords = ['Underscores','Bootstrap'];
 		props.version = '1.0.0';
-                props.author_name = 'Jeff Wilmoth';
-                props.repository = 'https://github.com/wilmoth77/moscow';
+		props.author_name = 'Jeff Wilmoth';
+		props.repository = 'https://github.com/wilmoth77/Silverback---WP';
 		props.devDependencies = {
 			"grunt": "latest",
-                "load-grunt-tasks": "latest",
-                "time-grunt": "latest",
-                "grunt-contrib-concat": "latest",
-    		"grunt-contrib-less": "latest",
-    		"grunt-contrib-uglify": "latest",
-    		"grunt-contrib-imagemin": "latest",
-    		"grunt-contrib-watch": "latest",
-                "grunt-modernizr": "latest",
-                "grunt-contrib-jshint": "latest",
-                "grunt-contrib-copy": "latest",
-                "less-plugin-autoprefix": "latest",
-		}; 
+			"load-grunt-tasks": "latest",
+			"time-grunt": "latest",
+			"grunt-contrib-concat": "latest",
+			"grunt-contrib-less": "latest",
+			"grunt-contrib-uglify": "latest",
+			"grunt-contrib-watch": "latest",
+			"grunt-contrib-jshint": "latest",
+			"grunt-contrib-copy": "latest",
+			"less-plugin-autoprefix": "latest",
+			"bootstrap": "^3.3.7",
+		};
 
 		// Sanitize names where we need to for PHP/JS
 		props.name = props.title.replace(/\s+/g, '-').toLowerCase();
