@@ -1,9 +1,0 @@
-{
-  "name": "{%= title %}",
-  "version": "1.0.0",
-  "dependencies": {
-    "bootstrap": "latest",
-    "fontawesome": "latest",
-    "modernizr": "2.8.3"
-  }
-}
