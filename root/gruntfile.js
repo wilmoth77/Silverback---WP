@@ -30,14 +30,14 @@ module.exports = function(grunt) {
       development: {
         files: {
           "./assets/css/wp-login.css":"./assets/less/wp-login.less",
-          "./public/css/app.min.css":"./assets/less/main.less",
+          "./public/css/main.min.css":"./assets/less/main.less",
         },
         options: {
           compress: true,
           sourceMap: true,
-          sourceMapFilename: 'assets/css/app.css.map',
+          sourceMapFilename: 'assets/css/main.css.map',
           sourceMapRootpath: '/wp-content/themes/{%= title %}/',
-          sourceMapURL: '/wp-content/themes/{%= title %}/assets/css/app.css.map'
+          sourceMapURL: '/wp-content/themes/{%= title %}/assets/css/main.css.map'
         },
         plugins: [
           new (require('less-plugin-autoprefix'))({browsers: ["> 5%, last 2 versions"]})
@@ -46,7 +46,7 @@ module.exports = function(grunt) {
       dist: {
         files: {
           "./public/css/wp-login.min.css":"./assets/less/wp-login.less",
-          "./public/css/app.min.css":"./assets/less/main.less",
+          "./public/css/main.min.css":"./assets/less/main.less",
         },
         options: {
           compress: true,
@@ -116,7 +116,7 @@ module.exports = function(grunt) {
         },
         files: [
           '**/*.php',
-          './assets/css/app.css',
+          './assets/css/main.css',
           './assets/js/*.js'
         ]
       }
