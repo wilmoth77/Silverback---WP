@@ -12,7 +12,7 @@ npm install -g grunt-init
 
 To clone the repository and add the template to grunt-init for automated project scaffolding run
 ```
-git clone github:wilmoth77/Silverback---WP ~/.grunt-init/silverback
+git clone https://github.com/wilmoth77/Silverback---WP.git ~/.grunt-init/silverback
 ```
 
 
