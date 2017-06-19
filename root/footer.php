@@ -7,16 +7,11 @@
  * @package {%= title %}
  */
 ?>
-      <hr>
-
-      <footer class="text-center">
-      	<a href="<?php echo esc_url( __( 'http://wordpress.org/', '{%= prefix %}' ) ); ?>"><?php printf( __( 'Proudly powered by %s', '{%= prefix %}' ), 'WordPress' ); ?></a>
-      	<p>&copy; <?php bloginfo('name'); ?> <?php echo date('Y'); ?></p>
-      </footer>
-    </div> <!-- /container -->
+<?php
+dynamic_sidebar( 'footer' ); // Display the footer sidebar
+?>
 
 <?php wp_footer(); ?>
 
 </body>
 </html>
-

@@ -7,26 +7,31 @@
 
 get_header(); ?>
 
-	<div id="primary" class="content-area">
-		<main id="main" class="site-main" role="main">
+<main class="content-area" role="main">
+			<?php	get_template_part( 'template-parts/main', 'header' );		 ?>
+		 <div id="primary" class="container news">
+			 <div class="row">
+				 <div class="primary-main col-md-8">
+					 <?php while ( have_posts() ) : the_post(); ?>
 
-		<?php while ( have_posts() ) : the_post(); ?>
+			 			<?php get_template_part( 'template-parts/content', 'single' ); ?>
 
-			<?php get_template_part( 'content', 'single' ); ?>
+			 			<?php {%= prefix %}_post_nav(); ?>
 
-			<?php {%= prefix %}_post_nav(); ?>
+			 			<?php
+			 				// If comments are open or we have at least one comment, load up the comment template
+			 				if ( comments_open() || '0' != get_comments_number() ) :
+			 					comments_template();
+			 				endif;
+			 			?>
 
-			<?php
-				// If comments are open or we have at least one comment, load up the comment template
-				if ( comments_open() || '0' != get_comments_number() ) :
-					comments_template();
-				endif;
-			?>
+			 		<?php endwhile; // end of the loop. ?>
+				 </div>
+				 <div class="primary-secondary col-md-3 col-md-offset-1">
+					 <?php get_sidebar(); ?>
+				 </div>
+		 </div>
+	 </div>
+	</main>
 
-		<?php endwhile; // end of the loop. ?>
-
-		</main><!-- #main -->
-	</div><!-- #primary -->
-
-<?php get_sidebar(); ?>
 <?php get_footer(); ?>

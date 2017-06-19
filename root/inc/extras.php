@@ -87,3 +87,54 @@ function {%= prefix %}_setup_author() {
 	}
 }
 add_action( 'wp', '{%= prefix %}_setup_author' );
+
+/**
+ * Enable the ability to use the disable wpautotop plugin on private posts such as content blocks
+ * Add filter and then go to Settings > Writing
+ */
+add_filter('lp_wpautop_show_private_pt', '__return_true');
+
+/**
+ * Add additional file type support for WordPress media uploads
+ */
+
+function cc_mime_types( $mimes ){
+$mimes['svg'] = 'image/svg+xml'; //Adding svg image support
+$mimes['exe'] = 'application/vnd.microsoft.portable-executable'; //Adding exe support
+$mimes['dmg'] = 'application/x-apple-diskimage'; //Adding dmg support
+return $mimes;
+}
+add_filter( 'upload_mimes', 'cc_mime_types' );
+
+/**
+ * Add bootstrap classes to gravityforms forms
+ */
+add_filter( 'gform_field_container', 'add_bootstrap_container_class', 10, 6 );
+function add_bootstrap_container_class( $field_container, $field, $form, $css_class, $style, $field_content ) {
+  $id = $field->id;
+  $field_id = is_admin() || empty( $form ) ? "field_{$id}" : 'field_' . $form['id'] . "_$id";
+  return '<li id="' . $field_id . '" class="' . $css_class . ' form-group">{FIELD_CONTENT}</li>';
+}
+
+/**
+ * WordPress' missing is_blog_page() function.  Determines if the currently viewed page is
+ * one of the blog pages, including the blog home page, archive, category/tag, author, or single
+ * post pages.
+ *
+ * @return bool
+ */
+function is_blog_page() {
+
+    global $post;
+
+    //Post type must be 'post'.
+    $post_type = get_post_type($post);
+
+    //Check all blog-related conditional tags, as well as the current post type,
+    //to determine if we're viewing a blog page.
+    return (
+        ( is_home() || is_archive() || is_single() )
+        && ($post_type == 'post')
+    ) ? true : false ;
+
+}
