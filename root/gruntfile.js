@@ -30,7 +30,7 @@ module.exports = function(grunt) {
       development: {
         files: {
           "./assets/css/wp-login.css":"./assets/less/wp-login.less",
-          "./public/css/app.min.css":"./assets/less/base.less",
+          "./public/css/app.min.css":"./assets/less/main.less",
         },
         options: {
           compress: true,
@@ -46,7 +46,7 @@ module.exports = function(grunt) {
       dist: {
         files: {
           "./public/css/wp-login.min.css":"./assets/less/wp-login.less",
-          "./public/css/app.min.css":"./assets/less/base.less",
+          "./public/css/app.min.css":"./assets/less/main.less",
         },
         options: {
           compress: true,
@@ -137,7 +137,7 @@ module.exports = function(grunt) {
   });
   // Compile tasks
      grunt.registerTask('compile', ['concat', 'less:development', 'uglify', 'jshint', 'copy']);
-     grunt.registerTask('compile-dist', ['concat', 'less:dist', 'uglify', 'jshint', 'copy']);
+     grunt.registerTask('build', ['concat', 'less:dist', 'uglify', 'jshint', 'copy']);
   // Set default task
   grunt.registerTask('default', ['watch']);
 };
