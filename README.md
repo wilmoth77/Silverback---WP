@@ -3,7 +3,7 @@ Silverback
 
 >WordPress starter theme based on Underscores using Bootstrap with LESS for responsiveness, Grunt.js for automation and NPM for package management
 
-Prerequisites to install: Grunt, Bower and LESS
+Prerequisites: Node, NPM, WordPress
 
 You also need `grunt-init`, which you can install globally with
 ```
@@ -18,7 +18,7 @@ git clone github:wilmoth77/Silverback---WP.git ~/.grunt-init/silverback
 
 ## Installation
 
-Install a copy of WordPress on your localhost. Cd into your themes folder with and create a new, empty theme folder.
+Install a copy of WordPress on your localhost.
 ```
 cd /var/www/YourWordPressInstallation/wp-content/themes
 ```
@@ -26,6 +26,9 @@ and create a new, empty theme folder.
 ```
 mkdir NewThemeName
 ```
+cd /var/www/YourWordPressInstallation/wp-content/themes/NewThemeName
+```
+
 
 
 
@@ -42,26 +45,22 @@ You should give your theme a title and function-prefix (e.g. MyTheme / mytheme).
 npm install
 ```
 
-
-### 3. Install Bootstrap and other frontend dependencies with Bower
-
-To add your packages of choice, modify ```bower.json``` and run
-
-```
-bower install
-```
-
-
-### 4. Compile folder structure with Grunt
+### 3. Compile folder structure with Grunt
 
 ```
 grunt compile
 ```
 
-### 5. Monitor your filesystem for changes
+### 4. Monitor your filesystem for changes
 
 ```
 grunt
+```
+
+### 5. Build
+```
+Currently same Grunt tasks as "grunt compile", except less is ran without source mapping
+grunt build
 ```
 
 ###
