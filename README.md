@@ -1,4 +1,4 @@
-Silverback
+Silverback Design System - A CINgroup Project
 ===========
 
 >WordPress starter theme based on Underscores using Bootstrap with LESS for responsiveness, Grunt.js for automation and NPM for package management
